@@ -1,228 +1,419 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>سياسة الخصوصية — ميقا الجديدة</title>
-  <meta name="description" content="سياسة خصوصية تطبيق ميقا الجديدة — تعرّف على كيفية جمع بياناتك وحمايتها." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg:#0d1117;--surface:#161b22;--surface2:#1c2230;--border:#30363d;
-      --primary:#4f9ef8;--primary-glow:#4f9ef822;--accent:#58d68d;--warn:#f39c12;
-      --text:#e6edf3;--text-muted:#8b949e;--radius:16px;--radius-sm:10px;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh}
-    .hero{background:linear-gradient(135deg,#0d1117 0%,#1a1f35 50%,#0d1117 100%);border-bottom:1px solid var(--border);padding:60px 24px 50px;text-align:center;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 0%,#4f9ef814 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 80% 100%,#58d68d0a 0%,transparent 60%);pointer-events:none}
-    .hero-icon{width:72px;height:72px;background:linear-gradient(135deg,#4f9ef8,#1e6fc4);border-radius:20px;display:inline-flex;align-items:center;justify-content:center;font-size:34px;margin-bottom:20px;box-shadow:0 0 40px #4f9ef830}
-    .hero h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#e6edf3 30%,#4f9ef8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
-    .hero p{color:var(--text-muted);font-size:1rem;max-width:500px;margin:0 auto 24px}
-    .badge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .badge{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:6px 16px;font-size:.82rem;color:var(--text-muted)}
-    .badge span{color:var(--primary)}
-    .container{max-width:860px;margin:0 auto;padding:48px 20px 80px}
-    .toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:40px}
-    .toc-title{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:16px}
-    .toc ol{padding-right:20px;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
-    .toc ol li{list-style:decimal}
-    .toc a{color:var(--primary);text-decoration:none;font-size:.92rem;transition:opacity .2s}
-    .toc a:hover{opacity:.75}
-    .section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:24px;transition:border-color .25s}
-    .section:hover{border-color:#4f9ef840}
-    .section-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-    .section-num{width:38px;height:38px;background:var(--primary-glow);border:1px solid #4f9ef840;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--primary);font-size:1rem;flex-shrink:0}
-    .section h2{font-size:1.2rem;font-weight:700;color:var(--text)}
-    .section h3{font-size:.95rem;font-weight:700;color:var(--primary);margin:20px 0 10px}
-    .section h3:first-of-type{margin-top:0}
-    .section p{color:#c9d1d9;font-size:.95rem;margin-bottom:10px}
-    .section p:last-child{margin-bottom:0}
-    .section ul,.section ol{padding-right:22px;color:#c9d1d9;font-size:.95rem}
-    .section ul li,.section ol li{margin-bottom:8px}
-    .section ul li::marker{color:var(--primary)}
-    strong{color:var(--text);font-weight:700}
-    .table-wrap{overflow-x:auto;margin-top:16px;border-radius:var(--radius-sm)}
-    table{width:100%;border-collapse:collapse;font-size:.88rem}
-    thead th{background:var(--surface2);color:var(--text-muted);font-weight:700;padding:12px 16px;text-align:right;border-bottom:1px solid var(--border);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
-    tbody td{padding:13px 16px;border-bottom:1px solid #21262d;color:#c9d1d9;vertical-align:top}
-    tbody tr:last-child td{border-bottom:none}
-    tbody tr:hover td{background:#1c2230}
-    .tag-enc{display:inline-block;background:#58d68d18;color:var(--accent);border:1px solid #58d68d30;border-radius:6px;padding:2px 9px;font-size:.78rem;font-weight:700}
-    .tag-none{display:inline-block;background:#f39c1218;color:var(--warn);border:1px solid #f39c1230;border-radius:6px;padding:2px 9px;font-size:.78rem;font-weight:700}
-    .callout{display:flex;gap:14px;align-items:flex-start;background:#f39c1208;border:1px solid #f39c1228;border-right:3px solid var(--warn);border-radius:var(--radius-sm);padding:16px 18px;margin-top:16px}
-    .callout-icon{font-size:1.3rem;flex-shrink:0}
-    .callout p{color:#c9d1d9;font-size:.88rem;margin:0}
-    .callout strong{color:var(--warn)}
-    .callout.info{background:#4f9ef808;border-color:#4f9ef828;border-right-color:var(--primary)}
-    .callout.info strong{color:var(--primary)}
-    .perm-list{display:flex;flex-direction:column;gap:12px;margin-top:16px}
-    .perm-item{display:flex;align-items:flex-start;gap:14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px}
-    .perm-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
-    .perm-name{font-weight:700;color:var(--text);font-size:.9rem;margin-bottom:3px}
-    .perm-desc{font-size:.85rem;color:var(--text-muted)}
-    .no-collect{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:16px}
-    .no-item{display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:.83rem;color:var(--text-muted)}
-    .no-item::before{content:'✗';color:#e74c3c;font-weight:900;font-size:.9rem}
-    footer{border-top:1px solid var(--border);text-align:center;padding:32px 24px;color:var(--text-muted);font-size:.85rem}
-    footer a{color:var(--primary);text-decoration:none}
-    footer a:hover{text-decoration:underline}
-    @media(max-width:600px){.toc ol{grid-template-columns:1fr}.section{padding:22px 18px}.hero{padding:44px 16px 36px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>سياسة الخصوصية - ميقا الجديدة</title>
+
+    <meta name="description"
+          content="سياسة الخصوصية لتطبيق ميقا الجديدة">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Tahoma, sans-serif;
+            background: #f5f6fa;
+            color: #222;
+            line-height: 1.9;
+        }
+
+        .header {
+            background: #17152b;
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        .header p {
+            margin: 0;
+            color: #c9c7d8;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 35px auto;
+            padding: 0 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0,0,0,.06);
+        }
+
+        h2 {
+            color: #4f3ca8;
+            font-size: 21px;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        ul {
+            padding-right: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .notice {
+            background: #f0edff;
+            border-right: 4px solid #5b45c5;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .date {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            padding: 30px 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 35px 15px;
+            }
+
+            .header h1 {
+                font-size: 25px;
+            }
+
+            .card {
+                padding: 22px 18px;
+            }
+
+            p,
+            li {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header class="hero">
-  <div class="hero-icon">🛡️</div>
-  <h1>سياسة الخصوصية</h1>
-  <p>نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث لأغراض تجارية</p>
-  <div class="badge-row">
-    <div class="badge">📅 آخر تحديث: <span>15 سبتمبر 2026</span></div>
-    <div class="badge">📦 <span>com.abdo.megaja</span></div>
-    <div class="badge">🏢 <span>ميقا الجديدة للاتصالات</span></div>
-  </div>
+<header class="header">
+
+    <h1>سياسة الخصوصية</h1>
+
+    <p>تطبيق ميقا الجديدة</p>
+
 </header>
 
 <main class="container">
-  <nav class="toc">
-    <div class="toc-title">📋 محتويات الوثيقة</div>
-    <ol>
-      <li><a href="#s1">البيانات التي نجمعها</a></li>
-      <li><a href="#s2">كيف تُخزَّن البيانات</a></li>
-      <li><a href="#s3">الأذونات المطلوبة</a></li>
-      <li><a href="#s4">مشاركة البيانات</a></li>
-      <li><a href="#s5">مدة الاحتفاظ والحذف</a></li>
-      <li><a href="#s6">حماية الأطفال</a></li>
-      <li><a href="#s7">الأمن</a></li>
-      <li><a href="#s8">تعديلات السياسة</a></li>
-      <li><a href="#s9">التواصل</a></li>
-    </ol>
-  </nav>
 
-  <section class="section" id="s1">
-    <div class="section-header"><div class="section-num">1</div><h2>البيانات التي نجمعها</h2></div>
-    <h3>أ) بيانات حساب التطبيق</h3>
-    <p><strong>رقم الهاتف</strong> (كمعرّف دخول) و<strong>كلمة المرور</strong>، تُدار عبر Firebase Authentication. كلمة المرور لا تُخزَّن عند المطوّر ولا داخل الجهاز — تُحفظ مشفّرة عند Google فقط.</p>
-    <h3>ب) بيانات حسابات الاتصالات</h3>
-    <ul>
-      <li><strong>رقم العقد والرقم السري</strong> لحساب ميقا: يُرسلان للخادم للتحقق فقط. الرقم السري <strong>لا يُحفظ نهائيًا</strong> — بعد نجاح التحقق نحفظ رمز وصول (API key) فقط.</li>
-      <li><strong>بيانات الاشتراك</strong> (الباقة، الرصيد، الاستهلاك، تاريخ الانتهاء، الفواتير) تُطلب من الخادم عند كل فتح للشاشة.</li>
-    </ul>
-    <h3>ج) معرّف الجهاز</h3>
-    <p>يُنشئ التطبيق <strong>رمزًا عشوائيًا (UUID)</strong> محليًا لتمييز الجهاز. هذا الرمز لا يحتوي أي معلومة شخصية ويُمسح بمسح بيانات التطبيق.</p>
-    <h3>د) ما لا نجمعه إطلاقاً</h3>
-    <div class="no-collect">
-      <div class="no-item">الموقع الجغرافي</div>
-      <div class="no-item">جهات الاتصال</div>
-      <div class="no-item">الصور والملفات</div>
-      <div class="no-item">الميكروفون</div>
-      <div class="no-item">الكاميرا</div>
-      <div class="no-item">سجل المكالمات</div>
-      <div class="no-item">الرسائل النصية</div>
-      <div class="no-item">معرّف الإعلانات</div>
-      <div class="no-item">بيانات تتبّع</div>
+    <div class="date">
+        آخر تحديث: 16 سبتمبر 2026
     </div>
-    <div class="callout info" style="margin-top:18px;">
-      <span class="callout-icon">ℹ️</span>
-      <p><strong>لا توجد إعلانات في التطبيق ولا نبيع بياناتك لأي طرف ثالث.</strong></p>
-    </div>
-  </section>
 
-  <section class="section" id="s2">
-    <div class="section-header"><div class="section-num">2</div><h2>كيف تُخزَّن البيانات</h2></div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>البيانات</th><th>مكان التخزين</th><th>الحماية</th></tr></thead>
-        <tbody>
-          <tr><td>رمز الوصول (API key)، الاسم، رقم العقد</td><td>ذاكرة الجهاز المحلية</td><td><span class="tag-enc">AES-256</span> EncryptedSharedPreferences</td></tr>
-          <tr><td>قائمة الحسابات المضافة</td><td>Firebase Firestore (Google)</td><td><span class="tag-enc">مشفّر</span> مسار خاص بالمستخدم</td></tr>
-          <tr><td>بيانات حساب التطبيق</td><td>Firebase Authentication (Google)</td><td><span class="tag-enc">Google</span> تشفير من جهة Google</td></tr>
-          <tr><td>الرقم السري لحساب ميقا</td><td>لا يُخزَّن أبداً</td><td><span class="tag-none">غير محفوظ</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin-top:16px;font-size:.88rem;color:var(--text-muted);">ملفات الحسابات والجلسة <strong>مستبعدة من النسخ الاحتياطي السحابي</strong> لجوجل.</p>
-  </section>
 
-  <section class="section" id="s3">
-    <div class="section-header"><div class="section-num">3</div><h2>الأذونات المطلوبة</h2></div>
-    <div class="perm-list">
-      <div class="perm-item">
-        <div class="perm-icon">🌐</div>
-        <div><div class="perm-name">INTERNET &amp; ACCESS_NETWORK_STATE</div><div class="perm-desc">جلب بيانات اشتراكك من خادم الشركة ومعرفة حالة الاتصال بالإنترنت.</div></div>
-      </div>
-      <div class="perm-item">
-        <div class="perm-icon">🔔</div>
-        <div><div class="perm-name">POST_NOTIFICATIONS</div><div class="perm-desc">تنبيهك قبل انتهاء الاشتراك (3 أيام). يمكنك رفض هذا الإذن والتطبيق يعمل عادي بدونه.</div></div>
-      </div>
-    </div>
-  </section>
+    <section class="card">
 
-  <section class="section" id="s4">
-    <div class="section-header"><div class="section-num">4</div><h2>مشاركة البيانات</h2></div>
-    <p>تُشارك البيانات مع طرفين فقط، وبالحد الأدنى اللازم للخدمة:</p>
-    <ol style="margin-top:14px;">
-      <li style="margin-bottom:12px;"><strong>خادم ميقا الجديدة للاتصالات</strong> — لتنفيذ عمليات حسابك (تحقق، تجديد، شحن كرت، تغيير باقة، سلفة رصيد).</li>
-      <li><strong>Google Firebase</strong> (Authentication + Firestore) — كمزوّد استضافة ومصادقة. راجع: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" style="color:var(--primary)">firebase.google.com/support/privacy</a></li>
-    </ol>
-    <div class="callout">
-      <span class="callout-icon">⚠️</span>
-      <p><strong>لا نبيع بياناتك</strong> ولا نشاركها مع أي طرف ثالث لأغراض تسويقية أو إعلانية.</p>
-    </div>
-  </section>
+        <h2>1. مقدمة</h2>
 
-  <section class="section" id="s5">
-    <div class="section-header"><div class="section-num">5</div><h2>مدة الاحتفاظ والحذف</h2></div>
-    <ul>
-      <li>بيانات الحسابات على Firestore تبقى لحين حذفك للحساب من داخل التطبيق.</li>
-      <li>حذف حساب مضاف يحذف نسخته المحلية ونسخته على Firestore معاً فوراً.</li>
-      <li>لحذف حساب التطبيق وكل بياناته، أرسل طلبًا لبريد الدعم ويُنفَّذ خلال <strong>30 يومًا</strong>.</li>
-      <li>مسح بيانات التطبيق من إعدادات الهاتف يمسح كل ما هو محفوظ محليًا <strong>فوراً</strong>.</li>
-    </ul>
-  </section>
+        <p>
+            نحن في تطبيق <strong>ميقا الجديدة</strong> نحترم خصوصية
+            المستخدمين ونلتزم بحماية المعلومات التي يتم التعامل معها
+            من خلال التطبيق.
+        </p>
 
-  <section class="section" id="s6">
-    <div class="section-header"><div class="section-num">6</div><h2>حماية الأطفال</h2></div>
-    <p>التطبيق موجّه لمشتركي خدمة الإنترنت (<strong>18 سنة فما فوق</strong>) ولا يستهدف الأطفال دون 13 سنة ولا يجمع بياناتهم عن قصد.</p>
-  </section>
+        <p>
+            توضح سياسة الخصوصية هذه بصورة عامة كيفية التعامل مع
+            المعلومات عند استخدام التطبيق والخدمات المرتبطة به.
+        </p>
 
-  <section class="section" id="s7">
-    <div class="section-header"><div class="section-num">7</div><h2>الأمن</h2></div>
-    <p>نستخدم التشفير المحلي <strong>(AES-256)</strong> للبيانات الحساسة على الجهاز، وقواعد أمان صارمة على Firestore تضمن عدم وصول أي مستخدم آخر لبياناتك.</p>
-    <div class="callout">
-      <span class="callout-icon">⚠️</span>
-      <p><strong>ملاحظة شفافية:</strong> بعض طلبات خادم ميقا الجديدة تُنفَّذ حالياً عبر HTTP. العمل جارٍ على نقلها كلها إلى HTTPS وسيُحدَّث هذا البند بعد الانتقال.</p>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="s8">
-    <div class="section-header"><div class="section-num">8</div><h2>تعديلات السياسة</h2></div>
-    <p>أي تعديل يُنشر على نفس الرابط مع تحديث تاريخ "آخر تحديث" أعلى الصفحة. نشجّعك على مراجعة هذه الصفحة بشكل دوري.</p>
-  </section>
 
-  <section class="section" id="s9">
-    <div class="section-header"><div class="section-num">9</div><h2>التواصل معنا</h2></div>
-    <p>للاستفسارات أو طلبات حذف البيانات:</p>
-    <div class="perm-list" style="margin-top:16px;">
-      <div class="perm-item">
-        <div class="perm-icon">📧</div>
-        <div><div class="perm-name">البريد الإلكتروني</div><div class="perm-desc">&lt;بريد الدعم — أضفه قبل النشر&gt;</div></div>
-      </div>
-      <div class="perm-item">
-        <div class="perm-icon">📱</div>
-        <div><div class="perm-name">واتساب / هاتف</div><div class="perm-desc">&lt;رقم الهاتف — أضفه قبل النشر&gt;</div></div>
-      </div>
-    </div>
-  </section>
+    <section class="card">
+
+        <h2>2. المعلومات التي قد يتم التعامل معها</h2>
+
+        <p>
+            قد يتعامل التطبيق مع بعض المعلومات التي يقدمها المستخدم
+            أو اللازمة لتشغيل الخدمات، ومنها:
+        </p>
+
+        <ul>
+
+            <li>
+                معلومات تسجيل الدخول والحساب.
+            </li>
+
+            <li>
+                المعلومات التي يقدمها المستخدم عند استخدام خدمات
+                التطبيق.
+            </li>
+
+            <li>
+                المعلومات المتعلقة بالحساب أو الاشتراك عند استخدام
+                الوظائف المرتبطة بها.
+            </li>
+
+            <li>
+                بعض المعلومات التقنية اللازمة لتشغيل التطبيق
+                وتحسين أدائه وأمانه.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>3. كيفية استخدام المعلومات</h2>
+
+        <p>
+            قد يتم استخدام المعلومات للأغراض التالية:
+        </p>
+
+        <ul>
+
+            <li>
+                توفير وتشغيل وظائف التطبيق.
+            </li>
+
+            <li>
+                تسجيل الدخول وإدارة الحساب.
+            </li>
+
+            <li>
+                تقديم الخدمات والوظائف المطلوبة من المستخدم.
+            </li>
+
+            <li>
+                تحسين أداء التطبيق وتجربة المستخدم.
+            </li>
+
+            <li>
+                معالجة الأخطاء والمشكلات التقنية.
+            </li>
+
+            <li>
+                حماية التطبيق والخدمات من الاستخدام غير المصرح به.
+            </li>
+
+            <li>
+                إرسال الإشعارات المتعلقة بالخدمات عند تفعيلها.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>4. مشاركة المعلومات</h2>
+
+        <p>
+            لا نقوم ببيع المعلومات الشخصية للمستخدمين.
+        </p>
+
+        <p>
+            قد تتم معالجة بعض المعلومات من خلال مزودي الخدمات
+            والتقنيات اللازمة لتشغيل التطبيق، وذلك بالقدر المطلوب
+            لتقديم الخدمات والوظائف المتاحة.
+        </p>
+
+        <p>
+            قد يتم أيضًا الإفصاح عن المعلومات عندما يكون ذلك مطلوبًا
+            بموجب القانون أو لحماية حقوق وأمن المستخدمين والخدمات.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>5. خدمات الطرف الثالث</h2>
+
+        <p>
+            قد يستخدم التطبيق خدمات تقنية تابعة لجهات خارجية من أجل
+            تشغيل بعض الوظائف، مثل خدمات المصادقة أو التخزين أو
+            الإشعارات أو الخدمات التقنية الأخرى.
+        </p>
+
+        <p>
+            قد تقوم هذه الجهات بمعالجة بعض البيانات وفق سياسات
+            الخصوصية الخاصة بها.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>6. حماية المعلومات</h2>
+
+        <p>
+            نتخذ إجراءات مناسبة للمساعدة في حماية المعلومات من
+            الوصول أو الاستخدام أو التعديل أو الإفصاح غير المصرح به.
+        </p>
+
+        <p>
+            ومع ذلك، لا يمكن ضمان أن تكون أي وسيلة لنقل أو تخزين
+            المعلومات عبر الإنترنت آمنة بشكل مطلق.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>7. الاحتفاظ بالمعلومات</h2>
+
+        <p>
+            يتم الاحتفاظ بالمعلومات بالقدر والمدة اللازمين لتشغيل
+            التطبيق وتقديم الخدمات أو للامتثال للالتزامات القانونية
+            المعمول بها.
+        </p>
+
+        <p>
+            قد يتم حذف بعض المعلومات عند حذف الحساب أو عند انتهاء
+            الحاجة إليها، وفقًا لطبيعة الخدمة والأنظمة المستخدمة.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>8. حذف البيانات</h2>
+
+        <p>
+            يمكن للمستخدم طلب حذف بياناته الشخصية، متى كان ذلك
+            متاحًا وفق طبيعة الخدمة والبيانات المعنية.
+        </p>
+
+        <div class="notice">
+
+            <strong>ملاحظة:</strong>
+
+            قد تكون هناك بعض المعلومات التي يلزم الاحتفاظ بها
+            لفترة محددة بسبب المتطلبات القانونية أو الأمنية أو
+            التشغيلية.
+
+        </div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>9. الإشعارات</h2>
+
+        <p>
+            قد يستخدم التطبيق الإشعارات لإرسال معلومات مرتبطة
+            بالخدمة أو الحساب أو التحديثات المهمة.
+        </p>
+
+        <p>
+            يستطيع المستخدم التحكم في إشعارات التطبيق من إعدادات
+            جهازه، وفق إمكانيات نظام التشغيل.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>10. خصوصية الأطفال</h2>
+
+        <p>
+            لا يستهدف التطبيق الأطفال بشكل مباشر، ولا نجمع معلومات
+            شخصية من الأطفال عن قصد.
+        </p>
+
+        <p>
+            إذا تبين لنا أن معلومات شخصية تم تقديمها من طفل دون
+            السن المناسب، فسيتم التعامل معها وفق القوانين
+            والمتطلبات المعمول بها.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>11. التغييرات على سياسة الخصوصية</h2>
+
+        <p>
+            قد نقوم بتحديث سياسة الخصوصية من وقت لآخر بسبب تطوير
+            التطبيق أو إضافة خدمات أو وظائف جديدة أو تغيير طريقة
+            تقديم الخدمات.
+        </p>
+
+        <p>
+            سيتم نشر أي تحديثات على هذه الصفحة مع تحديث تاريخ
+            سياسة الخصوصية.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>12. التواصل</h2>
+
+        <p>
+            إذا كانت لديك أي أسئلة أو استفسارات تتعلق بسياسة
+            الخصوصية أو البيانات، يمكنك التواصل معنا من خلال
+            معلومات التواصل الرسمية المتوفرة في صفحة التطبيق
+            على Google Play.
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>13. الموافقة على السياسة</h2>
+
+        <p>
+            باستخدام تطبيق ميقا الجديدة، يقر المستخدم بأنه اطلع
+            على سياسة الخصوصية هذه وفهم كيفية التعامل مع المعلومات
+            وفقًا لما هو موضح فيها.
+        </p>
+
+    </section>
+
 </main>
 
+
 <footer>
-  <p>© 2026 ميقا الجديدة للاتصالات والتقنية · جميع الحقوق محفوظة</p>
-  <p style="margin-top:6px;">حزمة التطبيق: <code style="color:var(--primary);background:var(--surface);padding:2px 8px;border-radius:6px;font-size:.8rem">com.abdo.megaja</code></p>
+
+    © 2026 ميقا الجديدة
+    <br>
+    جميع الحقوق محفوظة
+
 </footer>
+
 </body>
 </html>
-
